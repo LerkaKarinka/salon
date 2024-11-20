@@ -12,8 +12,10 @@ def employee():
     emp = db.get_employee()     
     return render_template("employee.jinja", emp = emp)
 @app.route("/price")
-def price():    
-    return render_template("price.jinja") 
+def price():
+    db = Database()
+    pr = db.get_price()    
+    return render_template("price.jinja", pr = pr) 
 @app.route("/registration")
 def registration():    
     return render_template("registration.jinja")
