@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -6,7 +7,16 @@
 
 <body>
     <h1>{{ test_name }} Запись на услугу</h1>
-    
+         <label for = "name">Name</label><br>
+         <input type = "text" name = "name" placeholder = "Name" /><br>
+         <label for = "email">City</label><br>
+         <input type = "text" name = "city" placeholder = "city" /><br>
+         <label for = "addr">addr</label><br>
+         <textarea name = "addr" placeholder = "addr"></textarea><br>
+         <label for = "PIN">City</label><br>
+         <input type = "text" name = "pin" placeholder = "pin" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
   
   <ul>
   {% for student in students %}

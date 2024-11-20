@@ -6,13 +6,13 @@
 </head>
 
 <body>
-    <h1>{{ test_name }} Сотрудники</h1>
+    <h1>Сотрудники</h1>
     
   
   <ul>
-  {% for student in students %}
+  {% for employee in emp %}
     <li>
-      <em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
+      <em>{{ employee.id }}:</em> {{ employee.name }}: {{employee.post}}
     </li>
   {% endfor %}
   </ul>
