@@ -3,17 +3,29 @@
 <head>
   <meta charset="utf-8">
   <title>Запись на услуги</title>
+  <style>
+        body {
+          margin: 0;
+          padding: 0;
+          height: 100vh; /* Занять всю высоту окна */
+          background-image: url('{{ url_for('static', filename='img/fon3.jpg') }}'); /* Используем Jinja для динамического пути */
+          background-size: cover; /* Масштабировать изображение для заполнения фона */
+          background-position: center; /* Центрировать изображение */
+          
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Занять всю высоту родителя */
+        }
+      
+    </style>
 </head>
 
 <body>
+    
    
   
-  <ul>
-  {% for student in students %}
-    <li>
-      <em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
-    </li>
-  {% endfor %}
-  </ul>
 </body>
 </html>

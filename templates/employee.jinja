@@ -2,14 +2,47 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Сотрудники</title>
+  <title>Сотрудники &#129465;</title>
+  <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('{{ url_for('static', filename='img/fon3.jpg') }}'); 
+        background-size: cover; 
+        background-position: center; 
+          
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+        
+  </style>
 </head>
 
 <body>
-    <h1>Сотрудники</h1>
+  <center>
+    <h1>Сотрудники &#129465;</h1>
     
+    <p>
+      <img src="static\img\r2.jpg" width="150" height="250">
+      <img src="static\img\r1.jpg" width="200" height="250">
+      <img src="static\img\r3.jpg" width="170" height="250">
+      <img src="static\img\r4.jpg" width="160" height="250">
+      <img src="static\img\r5.webp" width="160" height="250">
+      <img src="static\img\r6.webp" width="160" height="250">
+      <img src="static\img\r7.jpg" width="170" height="250">
+      <img src="static\img\r8.jpg" width="170" height="250">
+      <img src="static\img\r9.jpg" width="170" height="250">
+    </p>
+    <p align="center">
+      НАШИ САМЫЕ ЛУЧШИЕ СОТРУДНИКИ
+    </p>
   
-  <ul>
+
   <b><h2>
   {% for employee in emp %}
     <li>
@@ -17,6 +50,7 @@
     </li>
   {% endfor %}
   </h2></b>
-  </ul>
+ 
+  </center>
 </body>
 </html>
