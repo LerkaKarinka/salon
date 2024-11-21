@@ -7,6 +7,16 @@ class Database:
         self.engine = sqla.create_engine(CONNECTION)
         self.connection = self.engine.connect()
 
+    def add_registration(self, name,telephone,type):
+        query = sqla.text("INSERT INTO beauty_salon.registration (name,telephone,type) VALUES (:name,:telephone,:type)")
+        query = query.bindparams(sqla.bindparam("name", name))
+        query = query.bindparams(sqla.bindparam("telephone", telephone))
+        query = query.bindparams(sqla.bindparam("type", type))
+        self.connection.execute(query)
+        self.connection.commit()
+
+
+
     def get_employee_id(self, id:int):
         query = sqla.text("SELECT * FROM employee WHERE id = :id")
         query = query.bindparams(sqla.bindparam("id", id))
