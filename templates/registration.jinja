@@ -2,28 +2,27 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Запись на услуги</title>
+  <title>Запись на услуги &#128221;</title>
 </head>
 
 <body>
-    <h1>{{ test_name }} Запись на услугу</h1>
-         <label for = "name">Name</label><br>
-         <input type = "text" name = "name" placeholder = "Name" /><br>
-         <label for = "email">City</label><br>
-         <input type = "text" name = "city" placeholder = "city" /><br>
-         <label for = "addr">addr</label><br>
-         <textarea name = "addr" placeholder = "addr"></textarea><br>
-         <label for = "PIN">City</label><br>
-         <input type = "text" name = "pin" placeholder = "pin" /><br>
-         <input type = "submit" value = "Submit" />
+<b><h2>
+<center>
+
+    <h1>{{ test_name }} Запись на услугу &#128221;</h1>
+       <form method="POST">
+         <label for = "name">ФИО</label><br>
+         <input type = "text" name = "name" placeholder = "ФИО" /><br>
+         <label for = "telephone">Номер телефона</label><br>
+         <input type = "text" name = "telephone" placeholder = "Номер телефона"><br>
+         <label for = "type">Вид услуги</label><br>
+         <input type = "text" name = "type" placeholder = "Вид услуги" /><br>
+         <input type = "submit">
       </form>
-  
+  </center>
+  </b></h2>
   <ul>
-  {% for student in students %}
-    <li>
-      <em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
-    </li>
-  {% endfor %}
+
   </ul>
 </body>
 </html>

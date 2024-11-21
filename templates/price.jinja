@@ -2,18 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Прайс лист</title>
+  <title>Прайс лист &#128184;</title>
 </head>
 
 <body>
-    <h1>Прайс лист</h1>
+<center>
+    <h1>Прайс лист &#128184;</h1>
   
-  <ul>
-  {% for student in students %}
+<b><h2>
+  {% for price in pr %}
     <li>
-      <em>{{ student.name }}:</em> {{ student.score }}/{{ max_score }}
+      <em>{{ price.id }}:</em> {{ price.name }}:{{price.price}}
     </li>
   {% endfor %}
-  </ul>
+  </b></h2>
+  </center>
 </body>
 </html>
