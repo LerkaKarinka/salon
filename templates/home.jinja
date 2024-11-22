@@ -4,31 +4,32 @@
   <meta charset="utf-8">
   
   <title>Салон красоты "Иринка" &#128151;</title>
-   <style>
-        body {
-          margin: 0;
-          padding: 0;
-          height: 100vh; /* Занять всю высоту окна */
-          background-image: url('{{ url_for('static', filename='img/fon4.png') }}'); /* Используем Jinja для динамического пути */
-          background-size: cover; /* Масштабировать изображение для заполнения фона */
-          background-position: center; /* Центрировать изображение */
+  
+  
+  <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url('{{ url_for('static', filename='img/fon4.png') }}'); 
+        background-size: cover; 
+        background-position: center; 
           
-          
-        }
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%; /* Занять всю высоту родителя */
-        }
-      
-    </style>
-   
+      }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+        
+  </style>
   
 </head>
 
 
 <body>
+ 
  <div class="content">
   <center>
     <h1>{{ test_name }} Салон красоты "Иринка" &#128151;</h1>

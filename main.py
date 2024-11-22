@@ -6,6 +6,7 @@ app = Flask(__name__)
 def home():
     return render_template("home.jinja")
 
+
 @app.route("/employee")
 def employee():
     db = Database()
