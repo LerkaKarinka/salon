@@ -36,7 +36,7 @@ def get_image():
     if not "id" in request.args:
         return Response("id is not defined!", 418)
     file = open(f"files/{request.args['dir']}/{request.args['id']}.jpg", "rb")
-    return Response(file, 200)
+    return Response(file, 200, mimetype="image/jpg")
 
 def main():
     app.run("0.0.0.0", 8000,True)
