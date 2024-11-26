@@ -30,11 +30,13 @@
     <h1>{{ test_name }} Запись на услугу &#128221;</h1>
        <form method="POST">
          <label for = "name">ФИО</label><br>
-         <input type = "text" name = "name" placeholder = "ФИО" /><br>
+         <input type = "text" name = "name" placeholder = "ФИО" required/><br>
          <label for = "telephone">Номер телефона</label><br>
-         <input type = "text" name = "telephone" placeholder = "Номер телефона"><br>
+         
+         <input id = "phone" type = "text" name = "telephone" placeholder = "Номер телефона" required><br>
+
          <label for = "type">Вид услуги</label><br>
-         <input type = "text" name = "type" placeholder = "Вид услуги" /><br>
+         <input type = "text" name = "type" placeholder = "Вид услуги" required/><br>
          <input type = "submit">
       </form>
   </center>
@@ -44,3 +46,7 @@
   </ul>
 </body>
 </html>
+<script src="{{ url_for('static', filename='js/inputmask.min.js') }}"></script>
+<script>
+  Inputmask({ mask: "+7(999) 99-99-999"}).mask(document.querySelectorAll("#phone"));
+</script>
