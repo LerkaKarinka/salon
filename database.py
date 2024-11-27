@@ -30,7 +30,13 @@ class Database:
         for r in result:
             result_dict.append(r._asdict())
         return result_dict
-
+    def get_services(self):
+        query = sqla.text("SELECT * FROM services")
+        result = self.connection.execute(query).all()
+        result_dict = []
+        for r in result:
+            result_dict.append(r._asdict())
+        return result_dict
     def get_registration(self):
         query = sqla.text("SELECT * FROM registration")
         result = self.connection.execute(query).all()

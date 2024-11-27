@@ -36,7 +36,18 @@
          <input id = "phone" type = "text" name = "telephone" placeholder = "Номер телефона" required><br>
 
          <label for = "type">Вид услуги</label><br>
-         <input type = "text" name = "type" placeholder = "Вид услуги" required/><br>
+         
+         <select id="services" required>
+         
+          {% for service in ser %}
+            
+            <li>
+              {{ service.name }}
+              <option value= {{ service.name }}>
+            </li>
+          {% endfor %}
+                    
+         </select>
          <input type = "submit">
       </form>
   </center>
