@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Прайс лист &#128184;</title>
+   
+</head>
+
+<body>
+  <center>
+    <h1>Прайс лист &#128184;</h1>
+    <div class="container">
+     <div class="row">
+      <b><h2>
+       {% for services in pr %}
+        <img class="imge" src="/img?dir=services&id={{services.id}}">
+        <h2>{{services.name}}</h2>
+        <p>{{services.price}}</p>
+
+       {% endfor %}
+      </h2>
+      </b>
+     </div>
+    
+    </div>
+
+  </center>
+</body>
+</html>
+<style>
+  body {
+   background-color: antiquewhite; 
+   margin: 0;
+   padding: 0;
+   height: 100vh; /* Занять всю высоту окна */
+   background-size: cover; /* Масштабировать изображение для заполнения фона */
+   background-position: center; /* Центрировать изображение */
+}
+
+.imge{
+  vertical-align: middle;
+  width: 25%;
+  height: auto;
+  border-radius:17px ;
+  margin-right: 35%;
+  margin-top: 10px;
+  display: block;
+
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  
+}
+
+
+
+      
+</style>
