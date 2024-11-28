@@ -26,10 +26,13 @@ def registration():
         db = Database()
         name = request.form["name"]
         telephone = request.form["telephone"]
-        type = request.form["type"] 
-        db.add_registration(name,telephone,type)
+        service_id = request.form["service_id"] 
+        employee_id = request.form["employee_id"]
+        db.add_registration(name,telephone,service_id,employee_id)
+        return render_template("successfull.jinja")
     ser = db.get_services()
-    return render_template("registration.jinja", ser=ser)
+    emp = db.get_employee()     
+    return render_template("registration.jinja", ser=ser, emp=emp)
     
 @app.route("/img")
 def get_image():

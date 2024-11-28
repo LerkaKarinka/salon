@@ -35,20 +35,33 @@
          
          <input id = "phone" type = "text" name = "telephone" placeholder = "Номер телефона" required><br>
 
-         <label for = "type">Вид услуги</label><br>
+         <label for = "service_id">Вид услуги</label><br>
          
-         <select id="services" required>
+         <select id="services" name = "service_id" required>
          
           {% for service in ser %}
             
             <li>
-              {{ service.name }}
-              <option value= {{ service.name }}>
+              
+              <option value= {{ service.id }}>{{ service.name }}</option>
             </li>
           {% endfor %}
                     
-         </select>
-         <input type = "submit">
+         </select><br>
+        <label for = "employee_id">Работник</label><br>
+         <select id="employee" name = "employee_id" required>
+         
+          {% for employee in emp %}
+            
+            <li>
+              
+              <option value= {{ employee.id }}>{{ employee.name }}</option>
+            </li>
+          {% endfor %}
+                    
+         </select><br>
+         <input type = "submit" ><br>
+         
       </form>
   </center>
   </b></h2>
