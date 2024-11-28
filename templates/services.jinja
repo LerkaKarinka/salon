@@ -11,17 +11,19 @@
     <h1>Прайс лист &#128184;</h1>
     <div class="container">
      <div class="row">
-      <b><h2>
+      <div class="col-6">
        {% for services in pr %}
+      <div class="block">
         <img class="imge" src="/img?dir=services&id={{services.id}}">
-        <h2>{{services.name}}</h2>
-        <p>{{services.price}}</p>
+        <h2 class="text">{{services.name}}</h2>
+        <p class="text1">Стоимость: {{services.price}}</p>
 
+      </div>
+        
+       
        {% endfor %}
-      </h2>
-      </b>
+      </div>     
      </div>
-    
     </div>
 
   </center>
@@ -38,13 +40,13 @@
 }
 
 .imge{
-  vertical-align: middle;
-  width: 25%;
+  vertical-align:middle ;
+  width: 30%;
   height: auto;
   border-radius:17px ;
-  margin-right: 35%;
   margin-top: 10px;
-  display: block;
+  display: inline-block;
+  align: middle;
 
 }
 .container {
@@ -52,6 +54,24 @@
   margin: 0 auto;
   
 }
+.block {
+  margin-top: 35px;
+  display: flex;
+}
+.text{
+  margin-top: 10%;
+  margin-right: 20%;
+  position: relative;
+  margin: 5%;
+  
+}
+.text1{
+  margin-top: 7%;
+  margin-left: 22%;
+  position: absolute;
+  
+}
+
 
 
 
