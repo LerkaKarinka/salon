@@ -30,12 +30,38 @@
     <h1>{{ test_name }} Запись на услугу &#128221;</h1>
        <form method="POST">
          <label for = "name">ФИО</label><br>
-         <input type = "text" name = "name" placeholder = "ФИО" /><br>
+         <input type = "text" name = "name" placeholder = "ФИО" required/><br>
          <label for = "telephone">Номер телефона</label><br>
-         <input type = "text" name = "telephone" placeholder = "Номер телефона"><br>
-         <label for = "type">Вид услуги</label><br>
-         <input type = "text" name = "type" placeholder = "Вид услуги" /><br>
-         <input type = "submit">
+         
+         <input id = "phone" type = "text" name = "telephone" placeholder = "Номер телефона" required><br>
+
+         <label for = "service_id">Вид услуги</label><br>
+         
+         <select id="services" name = "service_id" required>
+         
+          {% for service in ser %}
+            
+            <li>
+              
+              <option value= {{ service.id }}>{{ service.name }}</option>
+            </li>
+          {% endfor %}
+                    
+         </select><br>
+        <label for = "employee_id">Работник</label><br>
+         <select id="employee" name = "employee_id" required>
+         
+          {% for employee in emp %}
+            
+            <li>
+              
+              <option value= {{ employee.id }}>{{ employee.name }}</option>
+            </li>
+          {% endfor %}
+                    
+         </select><br>
+         <input type = "submit" ><br>
+         
       </form>
   </center>
   </b></h2>
@@ -44,3 +70,7 @@
   </ul>
 </body>
 </html>
+<script src="{{ url_for('static', filename='js/inputmask.min.js') }}"></script>
+<script>
+  Inputmask({ mask: "+7(999) 99-99-999"}).mask(document.querySelectorAll("#phone"));
+</script>
