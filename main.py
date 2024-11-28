@@ -12,12 +12,12 @@ def employee():
     db = Database()
     emp = db.get_employee()     
     return render_template("employee.jinja", emp = emp)
-@app.route("/price")
 
-def price():
+@app.route("/services")
+def services():
     db = Database()
-    pr = db.get_price()    
-    return render_template("price.jinja", pr=pr) 
+    pr = db.get_services()    
+    return render_template("services.jinja", pr=pr) 
 
 @app.route("/registration", methods=['GET', 'POST'])
 def registration(): 
@@ -41,7 +41,7 @@ def get_image():
     if not "id" in request.args:
         return Response("id is not defined!", 418)
     file = open(f"files/{request.args['dir']}/{request.args['id']}.jpg", "rb")
-    return Response(file, 200)
+    return Response(file, 200, mimetype="image/jpg")
 
 def main():
     app.run("0.0.0.0", 8000,True)

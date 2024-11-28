@@ -46,8 +46,8 @@ class Database:
             result_dict.append(r._asdict())
         return result_dict 
 
-    def get_price(self):
-        query = sqla.text("SELECT * FROM price")
+    def get_services(self):
+        query = sqla.text("SELECT * FROM services ")
         result = self.connection.execute(query).all()
         result_dict = []
         for r in result:
