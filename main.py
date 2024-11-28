@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 from database import Database
 app = Flask(__name__)
 
@@ -29,6 +29,15 @@ def registration():
         db.add_registration(name,telephone,type)
     return render_template("registration.jinja")
     
+@app.route("/img")
+def get_image():
+    if not "dir" in request.args:
+        return Response("dir is not defined!", 418)
+    if not "id" in request.args:
+        return Response("id is not defined!", 418)
+    file = open(f"files/{request.args['dir']}/{request.args['id']}.jpg", "rb")
+    return Response(file, 200)
+
 def main():
     app.run("0.0.0.0", 8000,True)
 
