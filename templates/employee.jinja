@@ -18,6 +18,21 @@
         justify-content: center;
         align-items: center;
         height: 100%;
+        flex-wrap:wrap;
+      }
+      .card{
+            display: flex;
+    justify-content: space-around;
+    height: 500px;
+    width: 300px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+      }
+      img{
+        width: 150px;
+        height: 250px;
+        object-fit: cover;
       }
         
   </style>
@@ -27,30 +42,26 @@
   <center>
     <h1>Сотрудники &#129465;</h1>
     
-    <p>
-      <img src="static\img\r2.jpg" width="150" height="250">
-      <img src="static\img\r1.jpg" width="200" height="250">
-      <img src="static\img\r3.jpg" width="170" height="250">
-      <img src="static\img\r4.jpg" width="160" height="250">
-      <img src="static\img\r5.webp" width="160" height="250">
-      <img src="static\img\r6.webp" width="160" height="250">
-      <img src="static\img\r7.jpg" width="170" height="250">
-      <img src="static\img\r8.jpg" width="170" height="250">
-      <img src="static\img\r9.jpg" width="170" height="250">
-    </p>
+   
     <p align="center">
       НАШИ САМЫЕ ЛУЧШИЕ СОТРУДНИКИ
     </p>
   
 
   <b><h2>
+  <div class="content">
   {% for employee in emp %}
-    <li>
-      <em>{{ employee.id }}:</em> {{ employee.name }}: {{employee.post}}
-    </li>
+     <div class="card">
+        <img width="150ph" src = "/img?dir=employees&id={{ employee.id}}">
+        <h2>{{ employee.name }}</h2>
+        <p><strong>Должность:</strong> {{ employee.post }}</p>
+        
+    </div>
   {% endfor %}
+  </div>
+  
   </h2></b>
  
   </center>
-</body>
+</body
 </html>
